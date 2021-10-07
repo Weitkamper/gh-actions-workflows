@@ -1,0 +1,19 @@
+
+name: Draft Release
+
+on:
+  workflow_call:
+
+jobs:        
+  release_drafter:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs release-drafter
+      - name: Release Drafter
+        uses: release-drafter/release-drafter@v5.12.1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
