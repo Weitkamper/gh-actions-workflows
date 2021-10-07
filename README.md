@@ -6,10 +6,10 @@ GitHub Dokumentation zu wiederverwendbaren Workflows: https://docs.github.com/en
 
 ## Anwendungsbeispiele
 
-z.B.: `on_pr.yml`:
+z.B.: `lint.yml`:
 
 ```yml
-name: On Pull-Request
+name: Lint
 
 # Controls when the action will run. 
 on:
@@ -26,15 +26,15 @@ jobs:
     uses: Weitkamper/gh-actions-workflows/.github/workflows/lint.yml@main
 ```
 
-z.B.: `on_push-master.yml`:
+z.B.: `draft_release.yml`:
 
 ```yml
-name: On push in master
+name: Draft release
 
 on:
   push:
     branches:
-      - master
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
